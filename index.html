@@ -28,27 +28,57 @@
 <body class="bg-black text-white overflow-x-hidden">
 
   <!-- NAVBAR -->
-  <header class="fixed top-0 left-0 w-full z-50 transition-all duration-500" id="navbar">
+  <header
+    class="fixed top-0 left-0 w-full z-50
+    bg-black/30
+    backdrop-blur-xl
+    border-b border-white/10
+    transition-all duration-500"
+    id="navbar">
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
 
       <!-- LOGO -->
       <a href="#" class="text-2xl font-bold tracking-widest">
-        <span class="text-white">VA</span>
-        <span class="text-blue-600">Films</span>
+      <span class="text-white">VA</span>
+      <span class="text-[#E7C98A]">Films</span>
       </a>
 
-      <!-- MENU -->
-      <nav class="hidden md:flex gap-10 text-sm uppercase tracking-wider">
-        <a href="#sobre" class="hover:text-blue-500 transition">Sobre</a>
-        <a href="#portfolio" class="hover:text-blue-500 transition">Portfólio</a>
-        <a href="#avaliacoes" class="hover:text-blue-500 transition">Avaliações</a>
-        <a href="orcamento.html" class="hover:text-blue-500 transition">Orçamento</a>
-      </nav>
+<!-- MENU -->
+<nav class="hidden md:flex gap-10 text-sm uppercase tracking-[2px] font-medium">
 
-      <a href="orcamento.html"
-        class="hidden md:flex px-5 py-2 rounded-full border border-blue-600 hover:bg-blue-600 transition duration-300">
-        Solicitar Orçamento
-      </a>
+    <a href="#sobre"
+    class="text-white hover:text-[#E7C98A] transition duration-300">
+        Sobre
+    </a>
+
+    <a href="#portfolio"
+    class="text-white hover:text-[#E7C98A] transition duration-300">
+        Portfólio
+    </a>
+
+    <a href="#avaliacoes"
+    class="text-white hover:text-[#E7C98A] transition duration-300">
+        Avaliações
+    </a>
+
+    <a href="orcamento.html"
+    class="text-white hover:text-[#E7C98A] transition duration-300">
+        Orçamento
+    </a>
+
+</nav>
+
+<a href="orcamento.html"
+class="hidden md:flex px-5 py-2 rounded-full
+border border-[#C8A96B]
+text-[#E7C98A]
+hover:bg-[#C8A96B]
+hover:text-black
+transition-all duration-300">
+
+    Solicitar Orçamento
+
+</a>
 
       <!-- MENU MOBILE -->
       <button id="menuBtn" class="md:hidden text-3xl">
@@ -79,113 +109,144 @@
     </video>
 
     <!-- OVERLAY -->
-    <div class="absolute inset-0 bg-black/70"></div>
+    <div
+class="absolute inset-0"
+style="
+background:
+linear-gradient(
+to bottom,
+rgba(0,0,0,.25),
+rgba(0,0,0,.55),
+rgba(0,0,0,.92)
+);
+">
+</div>
 
     <!-- CONTEUDO -->
     <div class="relative z-10 max-w-4xl px-5 fade-up">
 
-      <span class="uppercase tracking-[4px] text-blue-500 text-sm">
-        Filmagem Premium com Drone
+<span class="uppercase tracking-[4px] text-[#E7C98A] text-sm">
+  Filmes Cinematográficos para Casamentos
+</span>
+
+<h1 class="text-4xl md:text-7xl font-bold mt-5 leading-tight">
+  Transformando momentos em
+
+  <span class="text-[#C8A96B]">
+    memórias eternas
+  </span>
+</h1>
+
+<p class="text-gray-300 mt-6 text-lg max-w-2xl mx-auto">
+  Casamentos registrados com emoção, elegância e qualidade cinematográfica.
+</p>
+
+<a href="orcamento.html"
+class="inline-block mt-8 px-8 py-4
+bg-[#C8A96B]
+hover:bg-[#B88B45]
+text-black
+rounded-full
+transition duration-300
+text-lg
+font-semibold">
+  Solicitar Orçamento
+</a>
+    </div>
+  </section>
+
+ <!-- SOBRE -->
+<section id="sobre" class="py-32 bg-[#0D0D0D]">
+
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+
+    <div class="fade-up">
+
+      <span class="text-[#E7C98A] uppercase tracking-[4px] text-sm">
+        Sobre a VAFilms
       </span>
 
-      <h1 class="text-4xl md:text-7xl font-bold mt-5 leading-tight">
-        Perspectivas únicas para
-        <span class="text-blue-600">
-          momentos inesquecíveis
+      <h2 class="text-4xl md:text-5xl font-bold mt-5 leading-tight">
+        Transformamos momentos em
+        <span class="text-[#C8A96B]">
+          filmes inesquecíveis
         </span>
-      </h1>
+      </h2>
 
-      <p class="text-gray-300 mt-6 text-lg max-w-2xl mx-auto">
-        Casamentos, eventos corporativos e sociais registrados com elegância cinematográfica.
+      <p class="text-gray-400 mt-8 leading-8 text-lg">
+        A VAFilms nasceu com o propósito de eternizar histórias através
+        de imagens cinematográficas. Cada casamento é único e merece ser
+        registrado com emoção, elegância e sensibilidade.
       </p>
 
-      <a href="orcamento.html"
-        class="inline-block mt-8 px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-full transition duration-300 text-lg font-medium shadow-xl">
-        Solicitar Orçamento
-      </a>
+      <p class="text-gray-400 mt-5 leading-8 text-lg">
+        Nossa missão é capturar olhares, sorrisos, lágrimas e todos os
+        detalhes que tornam cada história especial.
+      </p>
+
     </div>
-  </section>
 
-  <!-- SOBRE -->
-  <section id="sobre" class="py-28 bg-[#121212]">
+    <!-- CARD -->
+    <div class="glass rounded-[35px] p-10 fade-up">
 
-    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+      <span class="text-[#E7C98A] uppercase tracking-[4px] text-sm">
+        Tecnologia Premium
+      </span>
 
-      <div class="fade-up">
-        <span class="text-blue-500 uppercase tracking-[3px] text-sm">
-          Sobre a VAFilms
-        </span>
+      <h3 class="text-3xl font-bold mt-4">
+        DJI Mini 3 Pro
+      </h3>
 
-        <h2 class="text-4xl font-bold mt-4">
-          Capturando emoções sob um novo ângulo
-        </h2>
+      <div class="space-y-5 mt-8 text-gray-300">
 
-        <p class="text-gray-400 mt-6 leading-8">
-          A VAFilms nasceu da paixão por registrar momentos únicos
-          de forma cinematográfica e sofisticada.
-          Transformamos casamentos e eventos especiais em
-          memórias inesquecíveis vistas de uma perspectiva exclusiva.
-        </p>
-
-        <p class="text-gray-400 mt-4 leading-8">
-          Cada gravação é feita com atenção aos mínimos detalhes,
-          buscando emoção, elegância e autenticidade.
-        </p>
-      </div>
-
-      <!-- EQUIPAMENTO -->
-      <div class="bg-[#181818] border border-gray-800 rounded-[30px] p-10 fade-up">
-
-        <span class="text-blue-500 uppercase tracking-[3px] text-sm">
-          Tecnologia Premium
-        </span>
-
-        <h3 class="text-3xl font-bold mt-4">
-          DJI Mini 3 Pro
-        </h3>
-
-        <div class="space-y-5 mt-8 text-gray-300">
-
-          <div class="feature-card">
-             Filmagens em <strong>4K HDR</strong>
-          </div>
-
-          <div class="feature-card">
-             Câmera vertical para
-            <strong>Reels e TikTok</strong>
-          </div>
-
-          <div class="feature-card">
-             Drone ultraleve e
-            <strong>extremamente silencioso</strong>
-          </div>
-
-          <div class="feature-card">
-             Discrição total durante cerimônias
-          </div>
-
+        <div class="feature-card">
+          ✦ Filmagens cinematográficas em
+          <strong>4K HDR</strong>
         </div>
+
+        <div class="feature-card">
+          ✦ Conteúdo vertical para
+          <strong>Reels e TikTok</strong>
+        </div>
+
+        <div class="feature-card">
+          ✦ Drone leve, silencioso e discreto
+        </div>
+
+        <div class="feature-card">
+          ✦ Imagens aéreas emocionantes para cerimônias
+        </div>
+
       </div>
 
     </div>
-  </section>
 
-  <!-- PORTFOLIO -->
-  <section id="portfolio" class="py-28 bg-black">
+  </div>
 
-    <div class="max-w-7xl mx-auto px-6">
+</section>
 
-      <div class="text-center fade-up">
-        <span class="text-blue-500 uppercase tracking-[3px] text-sm">
-          Portfólio
-        </span>
+<!-- PORTFÓLIO -->
+<section id="portfolio" class="py-32 bg-black">
 
-        <h2 class="text-5xl font-bold mt-3">
-          Eventos registrados
-        </h2>
-      </div>
+  <div class="max-w-7xl mx-auto px-6">
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+    <div class="text-center fade-up">
+
+      <span class="text-[#E7C98A] uppercase tracking-[4px] text-sm">
+        Portfólio
+      </span>
+
+      <h2 class="text-5xl md:text-6xl font-bold mt-4">
+        Histórias registradas
+      </h2>
+
+      <p class="text-gray-400 mt-6 max-w-2xl mx-auto">
+        Alguns dos momentos que tivemos a honra de transformar em memórias eternas.
+      </p>
+
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
 
         <!-- VIDEO 1 -->
         <div class="video-card fade-up">
@@ -225,43 +286,46 @@
     </div>
   </section>
 
-  <!-- AVALIAÇÕES -->
-<section id="avaliacoes" class="py-28 bg-[#121212]">
+<!-- AVALIAÇÕES -->
+<div
+  id="avaliacoesHome"
+  class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
 
-  <div class="max-w-7xl mx-auto px-6">
 
-    <div class="text-center fade-up">
-      <span class="text-blue-500 uppercase tracking-[3px] text-sm">
-        Avaliações
-      </span>
+  </div>
 
-      <h2 class="text-5xl font-bold mt-4">
-        O que nossos clientes dizem
-      </h2>
-
-      <p class="text-gray-400 mt-5">
-        Experiências reais de quem já trabalhou com a VAFilms
-      </p>
-    </div>
-
-    <!-- CARDS -->
-    <div
-      id="avaliacoesHome"
-      class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16"
-    >
-    </div>
+</div>
 
     <!-- BOTÕES -->
-    <div class="flex flex-col md:flex-row gap-5 justify-center mt-14">
+    <div class="flex flex-col md:flex-row gap-5 justify-center mt-16 mb-32">
 
-      <a href="avaliacoes.html"
-      class="px-8 py-4 border border-blue-600 rounded-full hover:bg-blue-600 transition">
+      <a
+        href="avaliacoes.html"
+        class="px-8 py-4
+        rounded-full
+        border border-[#C8A96B]
+        text-[#E7C98A]
+        font-medium
+        transition-all duration-300
+        hover:bg-[#C8A96B]
+        hover:text-black">
+
         Ver Mais Avaliações
+
       </a>
 
-      <a href="avaliacoes.html#avaliar"
-      class="px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-full transition">
+      <a
+        href="avaliacoes.html#avaliar"
+        class="px-8 py-4
+        rounded-full
+        bg-[#C8A96B]
+        text-black
+        font-semibold
+        transition-all duration-300
+        hover:bg-[#B88B45]">
+
         Avaliar Agora
+
       </a>
 
     </div>
@@ -269,61 +333,6 @@
   </div>
 
 </section>
-  <!-- FORMULÁRIO -->
-  <section id="orcamento" class="py-28 bg-black">
-
-    <div class="max-w-4xl mx-auto px-6">
-
-      <div class="text-center fade-up">
-        <span class="text-blue-500 uppercase tracking-[3px] text-sm">
-          Solicitar Orçamento
-        </span>
-
-        <h2 class="text-5xl font-bold mt-4">
-          Vamos registrar seu evento
-        </h2>
-      </div>
-
-      <form id="contactForm"
-        class="mt-14 grid gap-6 fade-up">
-
-        <input type="text"
-          placeholder="Nome Completo"
-          required class="input-style">
-
-        <input type="email"
-          placeholder="E-mail"
-          required class="input-style">
-
-        <input type="text"
-          id="phone"
-          placeholder="WhatsApp"
-          required class="input-style">
-
-        <select class="input-style" required>
-          <option value="">Tipo de Evento</option>
-          <option>Casamento</option>
-          <option>Aniversário</option>
-          <option>Corporativo</option>
-          <option>Outros</option>
-        </select>
-
-        <input type="date"
-          required class="input-style">
-
-        <textarea rows="6"
-          placeholder="Detalhes do evento..."
-          class="input-style"></textarea>
-
-        <button type="submit"
-          class="bg-blue-600 hover:bg-blue-700 py-5 rounded-full text-lg transition">
-          Enviar Pedido de Orçamento
-        </button>
-
-      </form>
-
-    </div>
-  </section>
 
   <!-- FOOTER -->
   <footer class="bg-[#121212] border-t border-gray-800 py-10 text-center text-gray-400">
@@ -387,22 +396,23 @@ snapshot.forEach((doc)=>{
 const dados = doc.data();
 
 container.innerHTML += `
-<div class="bg-[#181818]
-border border-gray-800
+<div class="bg-white/5
+backdrop-blur-xl
+border border-[#C8A96B]/20
 rounded-[30px]
 p-8
-hover:border-blue-600
-transition duration-300">
+hover:border-[#C8A96B]
+transition-all duration-300">
 
-<div class="text-yellow-400 text-2xl">
+<div class="text-[#C8A96B] text-2xl">
 ${"★".repeat(dados.nota)}
 </div>
 
-<h3 class="text-2xl font-bold mt-4">
+<h3 class="text-2xl font-bold mt-4 text-white">
 ${dados.nome}
 </h3>
 
-<p class="text-gray-400 mt-5 leading-8">
+<p class="text-gray-300 mt-5 leading-8">
 ${dados.mensagem}
 </p>
 

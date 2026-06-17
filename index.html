@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>VAFilms | Filmagem Premium com Drone</title>
+
+  <meta name="description" content="Filmagens premium com drone para casamentos, eventos corporativos e sociais.">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonte Premium -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body{
+      font-family: 'Inter', sans-serif;
+      background:#000;
+    }
+  </style>
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+
+  <!-- NAVBAR -->
+  <header class="fixed top-0 left-0 w-full z-50 transition-all duration-500" id="navbar">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+
+      <!-- LOGO -->
+      <a href="#" class="text-2xl font-bold tracking-widest">
+        <span class="text-white">VA</span>
+        <span class="text-blue-600">Films</span>
+      </a>
+
+      <!-- MENU -->
+      <nav class="hidden md:flex gap-10 text-sm uppercase tracking-wider">
+        <a href="#sobre" class="hover:text-blue-500 transition">Sobre</a>
+        <a href="#portfolio" class="hover:text-blue-500 transition">Portfólio</a>
+        <a href="#avaliacoes" class="hover:text-blue-500 transition">Avaliações</a>
+        <a href="orcamento.html" class="hover:text-blue-500 transition">Orçamento</a>
+      </nav>
+
+      <a href="orcamento.html"
+        class="hidden md:flex px-5 py-2 rounded-full border border-blue-600 hover:bg-blue-600 transition duration-300">
+        Solicitar Orçamento
+      </a>
+
+      <!-- MENU MOBILE -->
+      <button id="menuBtn" class="md:hidden text-3xl">
+        ☰
+      </button>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div id="mobileMenu"
+      class="hidden bg-[#121212] border-t border-gray-800 px-6 py-6 md:hidden">
+      <div class="flex flex-col gap-4">
+        <a href="#sobre">Sobre</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#avaliacoes">Avaliações</a>
+        <a href="orcamento.html">Orçamento</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+
+    <!-- VIDEO HERO -->
+    <!-- COLOQUE SEU VIDEO AQUI -->
+    <video autoplay muted loop playsinline
+      class="absolute top-0 left-0 w-full h-full object-cover">
+      <source src="assets/sitebanner.mov" type="video/mp4">
+    </video>
+
+    <!-- OVERLAY -->
+    <div class="absolute inset-0 bg-black/70"></div>
+
+    <!-- CONTEUDO -->
+    <div class="relative z-10 max-w-4xl px-5 fade-up">
+
+      <span class="uppercase tracking-[4px] text-blue-500 text-sm">
+        Filmagem Premium com Drone
+      </span>
+
+      <h1 class="text-4xl md:text-7xl font-bold mt-5 leading-tight">
+        Perspectivas únicas para
+        <span class="text-blue-600">
+          momentos inesquecíveis
+        </span>
+      </h1>
+
+      <p class="text-gray-300 mt-6 text-lg max-w-2xl mx-auto">
+        Casamentos, eventos corporativos e sociais registrados com elegância cinematográfica.
+      </p>
+
+      <a href="orcamento.html"
+        class="inline-block mt-8 px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-full transition duration-300 text-lg font-medium shadow-xl">
+        Solicitar Orçamento
+      </a>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="py-28 bg-[#121212]">
+
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+
+      <div class="fade-up">
+        <span class="text-blue-500 uppercase tracking-[3px] text-sm">
+          Sobre a VAFilms
+        </span>
+
+        <h2 class="text-4xl font-bold mt-4">
+          Capturando emoções sob um novo ângulo
+        </h2>
+
+        <p class="text-gray-400 mt-6 leading-8">
+          A VAFilms nasceu da paixão por registrar momentos únicos
+          de forma cinematográfica e sofisticada.
+          Transformamos casamentos e eventos especiais em
+          memórias inesquecíveis vistas de uma perspectiva exclusiva.
+        </p>
+
+        <p class="text-gray-400 mt-4 leading-8">
+          Cada gravação é feita com atenção aos mínimos detalhes,
+          buscando emoção, elegância e autenticidade.
+        </p>
+      </div>
+
+      <!-- EQUIPAMENTO -->
+      <div class="bg-[#181818] border border-gray-800 rounded-[30px] p-10 fade-up">
+
+        <span class="text-blue-500 uppercase tracking-[3px] text-sm">
+          Tecnologia Premium
+        </span>
+
+        <h3 class="text-3xl font-bold mt-4">
+          DJI Mini 3 Pro
+        </h3>
+
+        <div class="space-y-5 mt-8 text-gray-300">
+
+          <div class="feature-card">
+             Filmagens em <strong>4K HDR</strong>
+          </div>
+
+          <div class="feature-card">
+             Câmera vertical para
+            <strong>Reels e TikTok</strong>
+          </div>
+
+          <div class="feature-card">
+             Drone ultraleve e
+            <strong>extremamente silencioso</strong>
+          </div>
+
+          <div class="feature-card">
+             Discrição total durante cerimônias
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="py-28 bg-black">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="text-center fade-up">
+        <span class="text-blue-500 uppercase tracking-[3px] text-sm">
+          Portfólio
+        </span>
+
+        <h2 class="text-5xl font-bold mt-3">
+          Eventos registrados
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+
+        <!-- VIDEO 1 -->
+        <div class="video-card fade-up">
+          <video controls poster="assets/thumb1.jpg">
+            <!-- COLOQUE O VIDEO -->
+            <source src="assets/casamento1.mp4" type="video/mp4">
+          </video>
+
+          <div class="video-overlay">
+            <h3>Casamento Alana & Bruno</h3>
+          </div>
+        </div>
+
+        <!-- VIDEO 2 -->
+        <div class="video-card fade-up">
+          <video controls poster="assets/thumb2.jpg">
+            <source src="assets/casamento2.mp4" type="video/mp4">
+          </video>
+
+          <div class="video-overlay">
+            <h3>Wedding Sunset</h3>
+          </div>
+        </div>
+
+        <!-- VIDEO 3 -->
+        <div class="video-card fade-up">
+          <video controls poster="assets/thumb3.jpg">
+            <source src="assets/corporativo.mp4" type="video/mp4">
+          </video>
+
+          <div class="video-overlay">
+            <h3>Evento Corporativo 2026</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- AVALIAÇÕES -->
+<section id="avaliacoes" class="py-28 bg-[#121212]">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="text-center fade-up">
+      <span class="text-blue-500 uppercase tracking-[3px] text-sm">
+        Avaliações
+      </span>
+
+      <h2 class="text-5xl font-bold mt-4">
+        O que nossos clientes dizem
+      </h2>
+
+      <p class="text-gray-400 mt-5">
+        Experiências reais de quem já trabalhou com a VAFilms
+      </p>
+    </div>
+
+    <!-- CARDS -->
+    <div
+      id="avaliacoesHome"
+      class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16"
+    >
+    </div>
+
+    <!-- BOTÕES -->
+    <div class="flex flex-col md:flex-row gap-5 justify-center mt-14">
+
+      <a href="avaliacoes.html"
+      class="px-8 py-4 border border-blue-600 rounded-full hover:bg-blue-600 transition">
+        Ver Mais Avaliações
+      </a>
+
+      <a href="avaliacoes.html#avaliar"
+      class="px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-full transition">
+        Avaliar Agora
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+  <!-- FORMULÁRIO -->
+  <section id="orcamento" class="py-28 bg-black">
+
+    <div class="max-w-4xl mx-auto px-6">
+
+      <div class="text-center fade-up">
+        <span class="text-blue-500 uppercase tracking-[3px] text-sm">
+          Solicitar Orçamento
+        </span>
+
+        <h2 class="text-5xl font-bold mt-4">
+          Vamos registrar seu evento
+        </h2>
+      </div>
+
+      <form id="contactForm"
+        class="mt-14 grid gap-6 fade-up">
+
+        <input type="text"
+          placeholder="Nome Completo"
+          required class="input-style">
+
+        <input type="email"
+          placeholder="E-mail"
+          required class="input-style">
+
+        <input type="text"
+          id="phone"
+          placeholder="WhatsApp"
+          required class="input-style">
+
+        <select class="input-style" required>
+          <option value="">Tipo de Evento</option>
+          <option>Casamento</option>
+          <option>Aniversário</option>
+          <option>Corporativo</option>
+          <option>Outros</option>
+        </select>
+
+        <input type="date"
+          required class="input-style">
+
+        <textarea rows="6"
+          placeholder="Detalhes do evento..."
+          class="input-style"></textarea>
+
+        <button type="submit"
+          class="bg-blue-600 hover:bg-blue-700 py-5 rounded-full text-lg transition">
+          Enviar Pedido de Orçamento
+        </button>
+
+      </form>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#121212] border-t border-gray-800 py-10 text-center text-gray-400">
+
+    <h3 class="text-2xl font-bold text-white">
+      VAFilms
+    </h3>
+
+    <p class="mt-3">
+      Filmagens premium com drone.
+    </p>
+
+    <p class="mt-2 text-sm">
+      © 2026 VAFilms — Todos os direitos reservados.
+    </p>
+
+  </footer>
+  <script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+getFirestore,
+collection,
+query,
+orderBy,
+limit,
+onSnapshot
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyD1g7JGOXyw3EdyToLf9cBwhd_X0IL0ANk",
+  authDomain: "vafilms-9b8f1.firebaseapp.com",
+  projectId: "vafilms-9b8f1",
+  storageBucket: "vafilms-9b8f1.firebasestorage.app",
+  messagingSenderId: "989706360602",
+  appId: "1:989706360602:web:19342dca70713a0f253ea3",
+  measurementId: "G-J492WN3Z55"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const container =
+document.getElementById("avaliacoesHome");
+
+const q = query(
+collection(db,"avaliacoes"),
+orderBy("data","desc"),
+limit(3)
+);
+
+onSnapshot(q,(snapshot)=>{
+
+container.innerHTML = "";
+
+snapshot.forEach((doc)=>{
+
+const dados = doc.data();
+
+container.innerHTML += `
+<div class="bg-[#181818]
+border border-gray-800
+rounded-[30px]
+p-8
+hover:border-blue-600
+transition duration-300">
+
+<div class="text-yellow-400 text-2xl">
+${"★".repeat(dados.nota)}
+</div>
+
+<h3 class="text-2xl font-bold mt-4">
+${dados.nome}
+</h3>
+
+<p class="text-gray-400 mt-5 leading-8">
+${dados.mensagem}
+</p>
+
+</div>
+`;
+
+});
+
+});
+
+</script>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

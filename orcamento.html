@@ -1,0 +1,288 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Orçamento | VAFilms</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --gold:#C8A96B;
+    --gold-hover:#B88B45;
+    --gold-light:#E7C98A;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#000;
+    color:white;
+}
+
+/* VIDEO FUNDO */
+.bg-video{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-2;
+}
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(0,0,0,.45),
+        rgba(0,0,0,.88)
+    );
+    z-index:-1;
+}
+
+/* CARD */
+.glass{
+    background:rgba(15,15,15,.72);
+    backdrop-filter:blur(16px);
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:
+    0 0 60px rgba(200,169,107,.08);
+}
+
+/* INPUTS */
+.input-style{
+    width:100%;
+    background:rgba(18,18,18,.85);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:20px;
+    color:white;
+    outline:none;
+    transition:.35s ease;
+}
+
+.input-style:focus{
+    border-color:var(--gold);
+    box-shadow:
+    0 0 25px rgba(200,169,107,.16);
+}
+
+.input-style::placeholder{
+    color:#999;
+}
+
+/* BOTÕES */
+.btn-gold{
+    background:var(--gold);
+    color:#111;
+    font-weight:600;
+    transition:.35s;
+}
+
+.btn-gold:hover{
+    background:var(--gold-hover);
+    transform:translateY(-3px);
+}
+
+.btn-outline{
+    border:1px solid var(--gold);
+    color:var(--gold-light);
+    transition:.35s;
+}
+
+.btn-outline:hover{
+    background:rgba(200,169,107,.12);
+    transform:translateY(-3px);
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- VIDEO DE FUNDO -->
+<video autoplay muted loop playsinline class="bg-video">
+    <source src="assets/hero-video.mp4" type="video/mp4">
+</video>
+
+<div class="overlay"></div>
+
+<!-- NAVBAR -->
+<header class="fixed top-0 left-0 w-full z-50 bg-black/40 backdrop-blur-xl border-b border-white/10">
+
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+
+        <!-- LOGO -->
+        <a href="index.html"
+        class="text-2xl font-bold tracking-widest">
+
+            <span class="text-white">
+                VA
+            </span>
+
+            <span class="text-[#E7C98A]">
+                Films
+            </span>
+
+        </a>
+
+        <div class="flex gap-4">
+
+            <!-- VOLTAR -->
+            <a href="index.html"
+            class="px-5 py-3 rounded-full btn-outline">
+
+                ← Voltar ao Site
+
+            </a>
+
+            <!-- AVALIAÇÕES -->
+            <a href="avaliacoes.html"
+            class="px-5 py-3 rounded-full btn-gold">
+
+                Ver Avaliações
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- FORM -->
+<section class="min-h-screen flex items-center justify-center px-6 py-36">
+
+<div class="glass rounded-[40px] p-8 md:p-14 w-full max-w-5xl">
+
+    <!-- TITULO -->
+    <div class="text-center">
+
+        <span class="uppercase tracking-[4px] text-[#E7C98A] text-sm">
+            Solicitar Orçamento
+        </span>
+
+        <h1 class="text-4xl md:text-6xl font-bold mt-5">
+
+            Vamos registrar seu
+
+            <span class="text-[#C8A96B]">
+                evento
+            </span>
+
+        </h1>
+
+        <p class="text-gray-300 mt-5 max-w-2xl mx-auto leading-8">
+            Preencha os dados abaixo para receber
+            um orçamento personalizado da VAFilms.
+        </p>
+
+    </div>
+
+    <!-- FORMULÁRIO -->
+    <form
+    id="orcamentoForm"
+    class="grid gap-6 mt-12">
+
+        <input
+        type="text"
+        placeholder="Nome Completo"
+        required
+        class="input-style"
+        />
+
+        <input
+        type="email"
+        placeholder="Seu E-mail"
+        required
+        class="input-style"
+        />
+
+        <input
+        type="tel"
+        placeholder="WhatsApp"
+        required
+        class="input-style"
+        />
+
+        <select
+        required
+        class="input-style">
+
+            <option value="">
+                Tipo de Evento
+            </option>
+
+            <option>Casamento</option>
+            <option>Aniversário</option>
+            <option>Evento Corporativo</option>
+            <option>Festa</option>
+            <option>Outros</option>
+
+        </select>
+
+        <input
+        type="date"
+        required
+        class="input-style"
+        />
+
+        <input
+        type="text"
+        placeholder="Cidade do Evento"
+        class="input-style"
+        />
+
+        <textarea
+        rows="5"
+        placeholder="Descreva seu evento..."
+        class="input-style"
+        ></textarea>
+
+        <button
+        type="submit"
+        class="btn-gold py-5 rounded-full text-lg">
+
+            Enviar Pedido de Orçamento
+
+        </button>
+
+    </form>
+
+</div>
+
+</section>
+
+<script>
+
+document
+.getElementById("orcamentoForm")
+.addEventListener(
+"submit",
+function(e){
+
+e.preventDefault();
+
+alert(
+"Pedido enviado com sucesso! Entraremos em contato."
+);
+
+this.reset();
+
+}
+);
+
+</script>
+
+</body>
+</html>
+```

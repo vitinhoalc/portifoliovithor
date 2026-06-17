@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Avaliações | VAFilms</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    background:#000;
+    color:white;
+    font-family:'Inter',sans-serif;
+}
+
+.input{
+    width:100%;
+    background:#111;
+    border:1px solid #222;
+    border-radius:18px;
+    padding:18px;
+    color:white;
+    outline:none;
+    transition:.3s;
+}
+
+.input:focus{
+    border-color:#2563eb;
+    box-shadow:0 0 20px rgba(37,99,235,.2);
+}
+
+.card{
+    background:#111;
+    border:1px solid #222;
+    border-radius:28px;
+    padding:28px;
+    transition:.3s;
+}
+
+.card:hover{
+    border-color:#2563eb;
+    transform:translateY(-4px);
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-gray-800">
+
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+
+        <!-- LOGO -->
+        <a href="index.html"
+        class="text-2xl font-bold tracking-widest">
+
+            <span class="text-white">
+                VA
+            </span>
+
+            <span class="text-blue-600">
+                Films
+            </span>
+
+        </a>
+
+        <div class="flex gap-4">
+
+            <!-- VOLTAR -->
+            <a href="index.html"
+            class="px-5 py-3 rounded-full border border-blue-600 hover:bg-blue-600 transition">
+
+                ← Voltar ao Site
+
+            </a>
+
+            <!-- ORÇAMENTO -->
+            <a href="orcamento.html"
+            class="px-5 py-3 rounded-full bg-blue-600 hover:bg-blue-700 transition">
+
+                Solicitar Orçamento
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+<section class="min-h-screen px-6 py-36">
+
+<div class="max-w-6xl mx-auto">
+
+<!-- TÍTULO -->
+<div class="text-center mb-14">
+
+    <span class="uppercase tracking-[4px] text-blue-500 text-sm">
+        Avaliações Reais
+    </span>
+
+    <h1 class="text-4xl md:text-6xl font-bold mt-4">
+        O que nossos clientes
+        <span class="text-blue-600">
+            dizem
+        </span>
+    </h1>
+
+    <p class="text-gray-400 mt-5 max-w-2xl mx-auto">
+        Veja experiências reais de clientes
+        que confiaram na VAFilms.
+    </p>
+
+</div>
+
+<!-- FORM -->
+<div id="avaliar"></div>
+
+<div class="bg-[#111] border border-gray-800 rounded-[35px] p-8 md:p-12 mb-16">
+
+<h2 class="text-3xl font-bold text-center mb-8">
+    Faça sua Avaliação
+</h2>
+
+<form id="form" class="space-y-5">
+
+    <input
+    id="nome"
+    type="text"
+    placeholder="Seu Nome"
+    required
+    class="input"
+    />
+
+    <select
+    id="nota"
+    required
+    class="input"
+    >
+        <option value="">
+            Selecione sua nota
+        </option>
+
+        <option value="5">
+            ★★★★★ Excelente
+        </option>
+
+        <option value="4">
+            ★★★★ Muito Bom
+        </option>
+
+        <option value="3">
+            ★★★ Bom
+        </option>
+
+        <option value="2">
+            ★★ Regular
+        </option>
+
+        <option value="1">
+            ★ Ruim
+        </option>
+    </select>
+
+    <textarea
+    id="mensagem"
+    rows="5"
+    placeholder="Conte como foi sua experiência..."
+    required
+    class="input"
+    ></textarea>
+
+    <button
+    type="submit"
+    class="bg-blue-600 hover:bg-blue-700 transition py-5 rounded-full text-lg font-semibold w-full">
+
+        Enviar Avaliação
+
+    </button>
+
+</form>
+
+</div>
+
+<!-- LISTA -->
+<div>
+
+<h2 class="text-4xl font-bold text-center mb-12">
+    Todas as Avaliações
+</h2>
+
+<div
+id="avaliacoes"
+class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+getFirestore,
+collection,
+addDoc,
+query,
+orderBy,
+onSnapshot,
+serverTimestamp
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyD1g7JGOXyw3EdyToLf9cBwhd_X0IL0ANk",
+  authDomain: "vafilms-9b8f1.firebaseapp.com",
+  projectId: "vafilms-9b8f1",
+  storageBucket: "vafilms-9b8f1.firebasestorage.app",
+  messagingSenderId: "989706360602",
+  appId: "1:989706360602:web:19342dca70713a0f253ea3",
+  measurementId: "G-J492WN3Z55"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const form =
+document.getElementById("form");
+
+const lista =
+document.getElementById("avaliacoes");
+
+
+// ENVIAR
+form.addEventListener(
+"submit",
+async(e)=>{
+
+e.preventDefault();
+
+const nome =
+document.getElementById("nome").value;
+
+const nota =
+parseInt(
+document.getElementById("nota").value
+);
+
+const mensagem =
+document.getElementById("mensagem").value;
+
+try{
+
+await addDoc(
+collection(db,"avaliacoes"),
+{
+nome,
+nota,
+mensagem,
+data: serverTimestamp()
+}
+);
+
+alert(
+"Avaliação enviada com sucesso!"
+);
+
+form.reset();
+
+}catch(error){
+
+console.error(error);
+
+alert(
+"Erro ao enviar avaliação."
+);
+
+}
+
+}
+);
+
+
+// LISTAR
+const q = query(
+collection(db,"avaliacoes"),
+orderBy("data","desc")
+);
+
+onSnapshot(
+q,
+(snapshot)=>{
+
+lista.innerHTML = "";
+
+snapshot.forEach((doc)=>{
+
+const dados = doc.data();
+
+lista.innerHTML += `
+<div class="card">
+
+<div class="text-yellow-400 text-2xl">
+${"★".repeat(dados.nota)}
+</div>
+
+<h3 class="text-2xl font-bold mt-4">
+${dados.nome}
+</h3>
+
+<p class="text-gray-400 mt-5 leading-8">
+${dados.mensagem}
+</p>
+
+</div>
+`;
+
+});
+
+}
+);
+
+</script>
+
+</body>
+</html>
